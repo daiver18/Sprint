@@ -1,0 +1,37 @@
+GET http://localhost:8080/api/tasks
+
+###
+
+GET http://localhost:8080/api/tasks/6198e7bb0ccd01d26c6ddab4
+
+###
+
+GET http://localhost:8080/api/tasks/createdBy/Daiver
+
+###
+
+POST http://localhost:8080/api/task
+content-type: application/json
+
+{
+  "title": "Task 4",
+  "description": "Task 4 description",
+  "done": false,
+  "createdBy": "Daiver"
+}
+
+###
+
+PUT http://localhost:8080/api/task/6198e7bb0ccd01d26c6ddab4
+content-type: application/json
+
+{
+  "title": "Task 1",
+  "description": "Task 1 description",
+  "done": false,
+  "createdBy": "Andres"
+}
+
+###
+
+DELETE http://localhost:8080/api/task/6198e7ea0ccd01d26c6ddab5

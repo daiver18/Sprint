@@ -1,0 +1,26 @@
+GET http://localhost:8080/api/users
+
+###
+
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+    
+  "name": "Daiver",
+}
+
+
+###
+
+
+PUT http://localhost:8080/api/users/61a8e04c3ce5486bf638106a
+Content-Type: application/json
+
+{
+  "name": "Andres",
+}
+
+### 
+
+DELETE http://localhost:8080/api/users/61a8e04c3ce5486bf638106a

@@ -2,12 +2,11 @@ package com.project.toDo.respositories;
 
 import java.util.List;
 
-import com.project.toDo.model.TodoModel;
+import com.project.toDo.model.UserModel;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TodoRepositorie extends MongoRepository<TodoModel, String> {
-    List<TodoModel> findBycreatedBy(String createdBy);
+public interface UserRepositorie extends MongoRepository<UserModel, String> {
 }

@@ -1,6 +1,5 @@
 package com.project.toDo.model;
 
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,14 +9,15 @@ public class TodoModel {
     private String id;
     private String title;
     private String description;
-    private String createdAt;
     private String createdBy;
     private Boolean done;
 
-    public TodoModel(String id, String title) {
+    public TodoModel(String id, String title, String description, String createdBy, Boolean done) {
         this.id = id;
         this.title = title;
- 
+        this.description = description;
+        this.createdBy = createdBy;
+        this.done = done;
     }
 
     public Boolean getDone() {

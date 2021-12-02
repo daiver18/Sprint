@@ -40,6 +40,11 @@ public class TodoController {
         return ResponseEntity.ok().body(todoModel);
     }
 
+    @GetMapping("/tasks/createdBy/{createdBy}")
+    public List<TodoModel> getBycreator(@PathVariable(value = "createdBy") String createdBy) {
+        return todoRepositorie.findBycreatedBy(createdBy);
+    }
+
     @PostMapping("/task")
     public TodoModel createTask(@RequestBody TodoModel newTodo) {
         return todoRepositorie.save(newTodo);
