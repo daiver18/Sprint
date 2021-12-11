@@ -20,13 +20,14 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@CrossOrigin(origins = "http://localhost:8080")
 @RestController
-@RequestMapping("/api")
 public class UserController {
+
     @Autowired
     UserRepositorie userRep;
 
+    @CrossOrigin(origins = "http://localhost:4200")
+    @RequestMapping("/api")
     @GetMapping("/users")
     public List<UserModel> getAll() {
         return userRep.findAll();
@@ -51,8 +52,9 @@ public class UserController {
 
     @DeleteMapping("/users/{id}")
     public Map<String, Boolean> deleteUser(@PathVariable(value = "id") String id)
-    throws RecursoNoEncontrado {
-        UserModel user = userRep.findById(id).orElseThrow(() -> new RecursoNoEncontrado("user no encontrado con el id :: " + id));
+            throws RecursoNoEncontrado {
+        UserModel user = userRep.findById(id)
+                .orElseThrow(() -> new RecursoNoEncontrado("user no encontrado con el id :: " + id));
 
         userRep.delete(user);
         Map<String, Boolean> response = new HashMap<>();

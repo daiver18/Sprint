@@ -14,9 +14,9 @@ POST http://localhost:8080/api/task
 content-type: application/json
 
 {
-  "title": "Task 4",
-  "description": "Task 4 description",
-  "done": false,
+  "title": "Task 6",
+  "description": "Task 6 description",
+  "done": true,
   "createdBy": "Daiver"
 }
 
@@ -34,4 +34,4 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/task/6198e7ea0ccd01d26c6ddab5
+DELETE http://localhost:8080/api/task/61b4b4588bcadc32649be7f4
