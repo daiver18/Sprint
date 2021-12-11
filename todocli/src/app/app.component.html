@@ -29,6 +29,7 @@
           <div class="d-flex justify-content-between">
             <div class="fw-bold">{{ task.title }}</div>
             <div class="text-muted"> {{ task.description }}</div>
+            <div class="text-muted d-flex flex-row"><div>Creada por : </div>{{ task.createdBy }}</div>
             <div class="text-muted">
               <i class="fa fa-edit cursor-pointer" title="Editar" (click)="edit(task)"></i>
               <i class=" fa fa-trash ms-2 cursor-pointer" title="Eliminar" (click)="delete(task)"></i>
