@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
     title: "",
     description: "",
     createdBy: "",
-    done: "false"
+    done: false
 }
 
   constructor(
@@ -31,23 +31,44 @@ export class AppComponent implements OnInit {
   }
 
   save() {
-
-    this.appService.create(this.task)
+    if (this.task.id) {
+      this.appService.update(this.task.id!, this.task)
     .subscribe(() => this.getAll());
 
+    }
+    else {
+    this.appService.create(this.task)
+    .subscribe(() => this.getAll());
+    }
     this.task = {
       id: "",
       title: "",
       description: "",
       createdBy: "",
-      done: "false"
+      done: false
+    }
+  }
+
+  clean() {
+    this.task = {
+      id: "",
+      title: "",
+      description: "",
+      createdBy: "",
+      done: false
     }
   }
 
 
   edit(task: any) {
-    this.task = task;
-
+    this.task = {
+      ...task
+    };
   }
 
+
+  delete(task: any) {
+    this.appService.delete(task.id)
+    .subscribe(() => this.getAll());
+  }
 }

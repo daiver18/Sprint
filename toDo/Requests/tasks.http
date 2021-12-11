@@ -34,4 +34,4 @@ content-type: application/json
 
 ###
 
-DELETE http://localhost:8080/api/task/61b4b4588bcadc32649be7f4
+DELETE http://localhost:8080/api/task/
